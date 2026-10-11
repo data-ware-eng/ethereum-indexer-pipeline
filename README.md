@@ -26,6 +26,7 @@ A robust, modular Python ETL pipeline designed to fetch, clean, and secure netwo
 - Python 3.11 (Pandas, SQLAlchemy, Requests)
 - PostgreSQL
 - Docker (Completed)
+- Apache Airflow
 
 ## 🗺️ Upcoming Features (Roadmap)
 
