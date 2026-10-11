@@ -1,8 +1,6 @@
-# Banking ETL Pipeline
+# 🌐 Ethereum Identity & Access Indexer Pipeline
 
-A modular Python ETL pipeline designed to fetch, clean, and secure customer transaction data.
-
-## 🚀 Current Features
+A robust, modular Python ETL pipeline designed to fetch, clean, and secure network access logs and Web3 identity data.
 
 - **Extract**: Fetches data from the DummyJSON API with fallback encoding management.
 - **Transform & Security Screening**:
@@ -14,7 +12,8 @@ A modular Python ETL pipeline designed to fetch, clean, and secure customer tran
 
 ## 📂 Project Structure
 
-- src/ -> Python script (extract, transform, notifications)
+- dags/ -> Airflow DAG orchestrating the automated workflow
+- src/ -> Python scripts (extract, transform, notifications)
 - sql/ -> Database schemas
 - data/ -> Local clean data storage
 - quarantine/ -> Isolated suspicious records
@@ -26,9 +25,8 @@ A modular Python ETL pipeline designed to fetch, clean, and secure customer tran
 
 - Python 3.11 (Pandas, SQLAlchemy, Requests)
 - PostgreSQL
-- Docker (In progress)
+- Docker (Completed)
 
-## 🔮 Upcoming Features (Roadmap)
-- **Docker Compose**: Run the database and the ETL together in containers.
-- **Apache Airflow**: Automate and orchestrate the execution pipeline schedules.
-- **Power BI Dashboard**: Connect to PostgreSQL for advanced analytics and metrics.
+## 🗺️ Upcoming Features (Roadmap)
+
+* **Power BI Dashboard:** Connect to PostgreSQL for advanced identity analytics and metrics.
