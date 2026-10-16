@@ -16,7 +16,7 @@ QUARANTINE_FILE = Path("quarantine/customers_quarantined.csv")
 
 DB_URL = (
     f"postgresql+psycopg2://postgres:{os.getenv('POSTGRES_PASSWORD')}"
-    "@localhost:5432/postgres"
+    f"@{os.getenv('DB_HOST', 'host.DOCKER.internal')}:5432/postgres"
 )
 
 logging.basicConfig(

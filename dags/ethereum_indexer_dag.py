@@ -1,6 +1,7 @@
 from datetime import datetime
 from airflow import DAG
 from airflow.providers.docker.operators.docker import DockerOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 default_args = {
     "owner": "data_engineering",
@@ -17,14 +18,12 @@ with DAG(
     tags=["blockchain", "etl"],
 ) as dag:
 
-    run_etl = DockerOperator(
-        task_id="execute_ethereum_indexer",
-        image="ethereum-indexer-pipeline:latest",
-        api_version="auto",
-        auto_remove=True,
-        command='sh -c "python src/extract.py && python src/transform.py"',
-        docker_url="unix://var/run/docker.sock",
-        network_mode="bridge",
-    )
+# Import your pipeline function from transform.py
+ from src.transform import run as run_etl_pipeline
 
-    run_etl
+run_etl = PythonOperator(
+    task_id="execute_ethereum_indexer",
+    python_callable=run_etl_pipeline
+)
+
+run_etl
