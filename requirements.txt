@@ -5,3 +5,6 @@ psycopg2-binary
 psutil
 requests
 python-dotenv
+pytest
+apache-airflow
+apache-airflow-providers-docker

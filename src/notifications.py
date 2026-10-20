@@ -37,4 +37,7 @@ def send_slack_alert(message: str) -> None:
         logging.error(f"An unexpected technical anomaly occurred during notification lifecycle: {general_error}")
 
 # --- SECURITY INTEGRATION VALIDATION ---
-send_slack_alert("⚠️ CRITICAL SECURITY ALERT: ETL Pipeline detected a malicious threat. Infected file has been successfully isolated and quarantined. Immediate inspection required.")
+if __name__ == "__main__":
+    send_slack_alert(
+        "⚠️ CRITICAL SECURITY ALERT: ETL Pipeline detected a malicious threat. Infected file has been successfully isolated and quarantined. Immediate inspection required."
+    )
